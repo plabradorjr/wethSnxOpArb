@@ -18,7 +18,7 @@ run `node client/calculateArb.js`
 
 ### Edit Heroku settings
 
-- [ ] push this repo to github
+- [x] push this repo to github
 - [x] add Procfile
 - [x] add engine on package.json
 
@@ -28,14 +28,14 @@ run `node client/calculateArb.js`
     }
   ```
 
-- [ ] run `heroku create my-app-name`
-- [ ] set .env varaibles on heroku
-- - [ ] run `heroku config:set OPTIMISM_WSS_MAINNET=your-alchemy-key-here`
-- - [ ] run `heroku config:set WALLET_ADDRESS=your-wallet-address-here`
-- - [ ] run `heroku config:set WALLET_SECRET=your-walllet-key-here`
+- [x] run `heroku create my-app-name`
+- [x] run `git push heroku main`
+- [x] set .env varaibles on heroku
+- - [x] run `heroku config:set OPTIMISM_WSS_MAINNET=your-alchemy-key-here`
+- - [x] run `heroku config:set WALLET_ADDRESS=your-wallet-address-here`
+- - [x] run `heroku config:set WALLET_SECRET=your-walllet-key-here`
 
-- [ ] run `git push heroku main`
-- [ ] run `heroku scale web=0 arbitrage=1`
+- [x] run `heroku scale web=0 arbitrage=1`
 
 ### random notes to self
 
