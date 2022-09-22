@@ -148,17 +148,17 @@ const listenForSwap = async () => {
     }
   );
 
-  const calculateArbEvery8sec = async () => {
+  const calculateArbEvery1min = async () => {
     if (!isExecuting) {
       isExecuting = true;
-      console.log("calculating arb every 8 seconds..... 👀");
+      console.log("calculating arb every 1 min..... 👀");
       calculateArb();
       return;
     }
     return;
   };
 
-  setInterval(calculateArbEvery8sec, 8000);
+  setInterval(calculateArbEvery1min, 60000);
 
   console.log("🦧 Waiting for swap event...");
   return;
