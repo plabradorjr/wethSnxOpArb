@@ -149,7 +149,7 @@ const listenForSwap = async () => {
     }
   );
 
-  const calculateArbEvery8sec = async () => {
+  const calculateArbEveryXtime = async () => {
     if (!isExecuting) {
       isExecuting = true;
       console.log("calculating arb every 1 minute..... 👀");
@@ -159,11 +159,18 @@ const listenForSwap = async () => {
     return;
   };
 
-  setInterval(calculateArbEvery8sec, 60000);
+  const ten_minutes = 1000 * 60 * 10;
+
+  setInterval(calculateArbEveryXtime, ten_minutes);
 
   console.log("🦧 Waiting for swap event...");
   return;
 };
 
-calculateArb();
+const calculateArbOnceNow = async () => {
+  isExecuting = true;
+  calculateArb();
+};
+
+calculateArbOnceNow();
 listenForSwap();
