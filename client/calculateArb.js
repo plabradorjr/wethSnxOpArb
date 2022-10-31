@@ -23,6 +23,7 @@ const {
 let isExecuting = false;
 
 const calculateArb = async () => {
+  console.log("🤖 calculating arb...");
   let t1 = await getPrice(
     token0,
     token1,
@@ -42,7 +43,7 @@ const calculateArb = async () => {
     return;
   } else {
     console.log(
-      "trade estimated WETH lost:",
+      "trade #1 estimated WETH lost:",
       t3 - gasCostTrade - initialToken0InputHuman
     );
     let r1 = await getPrice(
@@ -65,7 +66,7 @@ const calculateArb = async () => {
       return;
     } else {
       console.log(
-        "trade estimated WETH lost:",
+        "trade #2 estimated WETH lost:",
         r3 - gasCostTrade - initialToken0InputHuman
       );
       isExecuting = false;
@@ -148,20 +149,21 @@ const listenForSwap = async () => {
     }
   );
 
-  const calculateArbEvery1min = async () => {
+  const calculateArbEvery8sec = async () => {
     if (!isExecuting) {
       isExecuting = true;
-      console.log("calculating arb every 1 min..... 👀");
+      console.log("calculating arb every 1 minute..... 👀");
       calculateArb();
       return;
     }
     return;
   };
 
-  setInterval(calculateArbEvery1min, 60000);
+  setInterval(calculateArbEvery8sec, 60000);
 
   console.log("🦧 Waiting for swap event...");
   return;
 };
 
+calculateArb();
 listenForSwap();
